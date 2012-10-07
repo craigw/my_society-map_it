@@ -19,7 +19,7 @@ module MySociety
 
     module LocalAuthorityFinder
       LOCAL_AUTHORITY_TYPE_CODES = %w(
-	DIS MTD UTA LBO CTY LGD
+        DIS MTD UTA LBO CTY LGD COI
       ).map { |c| c.freeze }.freeze
 
       def local_authority
