@@ -29,6 +29,8 @@ module MySociety
 	  LOCAL_AUTHORITY_TYPE_CODES.include? la['type']
 	end
 
+        return if local_authority_info.nil?
+
         LocalAuthority.new local_authority_info
       rescue
         nil
