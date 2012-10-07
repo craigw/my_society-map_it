@@ -23,11 +23,15 @@ module MySociety
       ).map { |c| c.freeze }.freeze
 
       def local_authority
-        local_authority_info = to_point.to_hash.values.detect do |la|
+        local_authority_info = to_point.to_hash.values.sort_by { |a|
+          LOCAL_AUTHORITY_TYPE_CODES.index(a['type']) || -1
+        }.detect do |la|
 	  LOCAL_AUTHORITY_TYPE_CODES.include? la['type']
 	end
 
         LocalAuthority.new local_authority_info
+      rescue
+        nil
       end
     end
 
