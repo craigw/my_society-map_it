@@ -1,6 +1,7 @@
 # MySociety::MapIt
 
-TODO: Write a gem description
+Interact with the MySociety MapIt service.
+
 
 ## Installation
 
@@ -16,9 +17,14 @@ Or install it yourself as:
 
     $ gem install my_society-map_it
 
+
 ## Usage
 
-TODO: Write usage instructions here
+    require 'my_society/map_it'
+    p = MySociety::MapIt::Postcode.new 'SE1 1EY'
+    la = p.local_authority
+    la.name # => "Southwark Borough Council"
+
 
 ## Contributing
 
