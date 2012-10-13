@@ -41,6 +41,12 @@ module MySociety
       attr_accessor :attributes
       private :attributes=, :attributes
 
+      def self.find uri
+        u = URI.parse uri
+        r = Net::HTTP.get_response u
+        new JSON.parse r.body
+      end
+
       def initialize attributes
         self.attributes = attributes
       end
@@ -51,6 +57,10 @@ module MySociety
 
       def id
         attributes['id']
+      end
+
+      def uri
+        [ MySociety::MapIt.base_url, 'area', id ].join '/'
       end
     end
 
