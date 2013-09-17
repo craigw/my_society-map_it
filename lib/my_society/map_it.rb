@@ -18,22 +18,83 @@ module MySociety
     end
 
     module LocalAuthorityFinder
-      LOCAL_AUTHORITY_TYPE_CODES = %w(
-        DIS MTD UTA LBO CTY LGD COI
-      ).map { |c| c.freeze }.freeze
+      DISTRICT_TYPE_CODES = %w(
+        DIS LGD
+      ).freeze
+      
+      UNITARY_TYPE_CODES = %w(
+        UTA MTD LBO COI
+      ).freeze
+      
+      COUNTY_TYPE_CODES = %w(
+        CTY
+      ).freeze
+      
+      COUNTY_WARD_TYPE_CODES = %w(
+        CED
+      )
+      
+      PARISH_TYPE_CODES = %w(
+        CPC COP
+      )
+      
+      WARD_TYPE_CODES = %w(
+        DIW LBW LGW MTW UTW
+      )
+      
+      def district
+        detect(DISTRICT_TYPE_CODES)
+      end
+      
+      def parish
+        detect(PARISH_TYPE_CODES)
+      end
+      
+      def county
+        return if district.nil?
+        detect(COUNTY_TYPE_CODES)
+      end
+      
+      def county_ward
+        return if county.nil?
+        detect(COUNTY_WARD_TYPE_CODES)
+      end
+      
+      def unitary
+        detect(UNITARY_TYPE_CODES)
+      end
+      
+      def ward
+        detect(WARD_TYPE_CODES)
+      end
 
       def local_authority
-        local_authority_info = to_point.to_hash.values.sort_by { |a|
-          LOCAL_AUTHORITY_TYPE_CODES.index(a['type']) || -1
-        }.detect do |la|
-	  LOCAL_AUTHORITY_TYPE_CODES.include? la['type']
-	end
-
-        return if local_authority_info.nil?
-
-        LocalAuthority.new local_authority_info
+        if district.nil?
+          unitary
+        else
+          {
+            :district => district,
+            :county   => county
+          }
+        end
       rescue
         nil
+      end
+      
+      def detect(type)
+        la = to_point.to_hash.values.detect do |la|
+	        type.include? la['type']
+	      end
+	      
+	      return if la.nil?
+	      
+	      LocalAuthority.new la
+      rescue
+        nil
+      end
+      
+      def two_tier?
+        local_authority.kind_of? Hash
       end
     end
 
@@ -57,6 +118,14 @@ module MySociety
 
       def id
         attributes['id']
+      end
+      
+      def snac
+        attributes['codes']['ons'] rescue nil
+      end
+      
+      def gss
+        attributes['codes']['gss'] rescue nil
       end
 
       def uri
@@ -88,7 +157,7 @@ module MySociety
       end
 
       def uri
-        "#{MySociety::MapIt.base_url}/point/#{coordinate_system}/#{x},#{y}"
+        "#{MySociety::MapIt.base_url}/point/#{coordinate_system}/#{y},#{x}"
       end
 
       def to_point
@@ -117,7 +186,17 @@ module MySociety
 
       def to_point
         h = to_hash.dup
-        Point.new h['wgs84_lon'], h['wgs84_lat'], Point::SYSTEM_WGS84
+        Point.new h['wgs84_lat'], h['wgs84_lon'], Point::SYSTEM_WGS84
+      end
+      
+      def easting_northing
+        h = to_hash.dup
+        if h['coordsyst'] == "G"
+          coordsyst = Point::SYSTEM_BRITISH_NATIONAL_GRID
+        else h['coordsyst'] == "I"
+          coordsyst = Point::SYSTEM_IRISH_NATIONAL_GRID
+        end
+        Point.new h['northing'], h['easting'], coordsyst
       end
     end
   end
