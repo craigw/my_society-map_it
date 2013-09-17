@@ -19,7 +19,5 @@ RSpec.configure do |c|
 end
 
 RSpec.configure do |config|
-
   config.order = "random"
-
 end
