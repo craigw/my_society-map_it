@@ -22,9 +22,15 @@ Or install it yourself as:
 
     require 'my_society/map_it'
     p = MySociety::MapIt::Postcode.new 'SE1 1EY'
+    p.two_tier? # => false
     la = p.local_authority
     la.name # => "Southwark Borough Council"
-
+    
+    p = MySociety::MapIt::Postcode.new 'B46 3LD'
+    p.two_tier? # => true
+    la = p.local_authority
+    la[:district].name # => "North Warwickshire Borough Council"
+    la[:county].name # => "Warwickshire County Council"
 
 ## Contributing
 
