@@ -1,0 +1,184 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://mapit.mysociety.org/postcode/B463LD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      expires:
+      - Tue, 15 Oct 2013 13:20:51 GMT
+      vary:
+      - Cookie,Accept-Encoding
+      etag:
+      - ! '"40eca97e347e9ac2c1ce9caca6bfb5a2;gzip"'
+      cache-control:
+      - max-age=2419200
+      access-control-allow-origin:
+      - ! '*'
+      last-modified:
+      - Tue, 17 Sep 2013 13:20:51 GMT
+      content-type:
+      - application/json; charset=utf-8
+      x-url:
+      - /postcode/B463LD
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 17 Sep 2013 14:44:15 GMT
+      age:
+      - '5004'
+      connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"wgs84_lat": 52.496789409955881, "coordsyst": "G", "shortcuts":
+        {"WMC": 66024, "ward": {"county": 15881, "district": 7606}, "council": {"county":
+        2243, "district": 2458}}, "wgs84_lon": -1.706805276569471, "postcode": "B46
+        3LD", "easting": 420002, "areas": {"40352": {"parent_area": null, "generation_high":
+        20, "all_names": {}, "id": 40352, "codes": {"ons": "E02006473"}, "name": "North
+        Warwickshire 006", "country": "E", "type_name": "Middle Layer Super Output
+        Area (Full)", "generation_low": 13, "country_name": "England", "type": "OMF"},
+        "11809": {"parent_area": null, "generation_high": 20, "all_names": {}, "id":
+        11809, "codes": {"ons": "05", "gss": "E15000005", "unit_id": "41426"}, "name":
+        "West Midlands", "country": "E", "type_name": "European region", "generation_low":
+        1, "country_name": "England", "type": "EUR"}, "2243": {"parent_area": null,
+        "generation_high": 20, "all_names": {}, "id": 2243, "codes": {"ons": "44",
+        "gss": "E10000031", "unit_id": "10049"}, "name": "Warwickshire County Council",
+        "country": "E", "type_name": "County council", "generation_low": 1, "country_name":
+        "England", "type": "CTY"}, "900001": {"parent_area": null, "generation_high":
+        20, "all_names": {}, "id": 900001, "codes": {}, "name": "European Parliament",
+        "country": "", "type_name": "European Parliament", "generation_low": 1, "country_name":
+        "-", "type": "EUP"}, "66024": {"parent_area": null, "generation_high": 20,
+        "all_names": {}, "id": 66024, "codes": {"gss": "E14000854", "unit_id": "24700"},
+        "name": "North Warwickshire", "country": "E", "type_name": "UK Parliament
+        constituency", "generation_low": 13, "country_name": "England", "type": "WMC"},
+        "15881": {"parent_area": 2243, "generation_high": 20, "all_names": {}, "id":
+        15881, "codes": {"unit_id": "10112"}, "name": "Coleshill", "country": "E",
+        "type_name": "County council electoral division", "generation_low": 3, "country_name":
+        "England", "type": "CED"}, "97162": {"parent_area": null, "generation_high":
+        20, "all_names": {}, "id": 97162, "codes": {"ons": "E01031021"}, "name": "North
+        Warwickshire 006C", "country": "E", "type_name": "Lower Layer Super Output
+        Area (Full)", "generation_low": 13, "country_name": "England", "type": "OLF"},
+        "131540": {"parent_area": null, "generation_high": 20, "all_names": {}, "id":
+        131540, "codes": {"ons": "E01031021"}, "name": "North Warwickshire 006C",
+        "country": "E", "type_name": "Lower Layer Super Output Area (Generalised)",
+        "generation_low": 13, "country_name": "England", "type": "OLG"}, "7606": {"parent_area":
+        2458, "generation_high": 20, "all_names": {}, "id": 7606, "codes": {"ons":
+        "44UBGC", "gss": "E05007463", "unit_id": "10113"}, "name": "Coleshill South",
+        "country": "E", "type_name": "District council ward", "generation_low": 1,
+        "country_name": "England", "type": "DIW"}, "55160": {"parent_area": 2458,
+        "generation_high": 20, "all_names": {}, "id": 55160, "codes": {"ons": "44UB010",
+        "gss": "E04009636", "unit_id": "10183"}, "name": "Coleshill", "country": "E",
+        "type_name": "Civil parish/community", "generation_low": 12, "country_name":
+        "England", "type": "CPC"}, "47546": {"parent_area": null, "generation_high":
+        20, "all_names": {}, "id": 47546, "codes": {"ons": "E02006473"}, "name": "North
+        Warwickshire 006", "country": "E", "type_name": "Middle Layer Super Output
+        Area (Generalised)", "generation_low": 13, "country_name": "England", "type":
+        "OMG"}, "2458": {"parent_area": null, "generation_high": 20, "all_names":
+        {}, "id": 2458, "codes": {"ons": "44UB", "gss": "E07000218", "unit_id": "10124"},
+        "name": "North Warwickshire Borough Council", "country": "E", "type_name":
+        "District council", "generation_low": 1, "country_name": "England", "type":
+        "DIS"}, "900000": {"parent_area": null, "generation_high": 19, "all_names":
+        {}, "id": 900000, "codes": {}, "name": "House of Commons", "country": "",
+        "type_name": "UK Parliament", "generation_low": 1, "country_name": "-", "type":
+        "WMP"}}, "northing": 288805}'
+    http_version: '1.1'
+  recorded_at: Tue, 17 Sep 2013 14:44:15 GMT
+- request:
+    method: get
+    uri: http://mapit.mysociety.org/point/4326/-1.706805276569471,52.49678940995588
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      expires:
+      - Tue, 15 Oct 2013 13:20:51 GMT
+      vary:
+      - Cookie,Accept-Encoding
+      etag:
+      - ! '"dd54c79a7ffa9ada97f196e2b607b2e1;gzip"'
+      cache-control:
+      - max-age=2419200
+      access-control-allow-origin:
+      - ! '*'
+      last-modified:
+      - Tue, 17 Sep 2013 13:20:51 GMT
+      content-type:
+      - application/json; charset=utf-8
+      x-url:
+      - /point/4326/-1.706805276569471,52.49678940995588
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 17 Sep 2013 14:44:15 GMT
+      age:
+      - '5003'
+      connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"40352": {"parent_area": null, "generation_high": 20, "all_names":
+        {}, "id": 40352, "codes": {"ons": "E02006473"}, "name": "North Warwickshire
+        006", "country": "E", "type_name": "Middle Layer Super Output Area (Full)",
+        "generation_low": 13, "country_name": "England", "type": "OMF"}, "11809":
+        {"parent_area": null, "generation_high": 20, "all_names": {}, "id": 11809,
+        "codes": {"ons": "05", "gss": "E15000005", "unit_id": "41426"}, "name": "West
+        Midlands", "country": "E", "type_name": "European region", "generation_low":
+        1, "country_name": "England", "type": "EUR"}, "2243": {"parent_area": null,
+        "generation_high": 20, "all_names": {}, "id": 2243, "codes": {"ons": "44",
+        "gss": "E10000031", "unit_id": "10049"}, "name": "Warwickshire County Council",
+        "country": "E", "type_name": "County council", "generation_low": 1, "country_name":
+        "England", "type": "CTY"}, "66024": {"parent_area": null, "generation_high":
+        20, "all_names": {}, "id": 66024, "codes": {"gss": "E14000854", "unit_id":
+        "24700"}, "name": "North Warwickshire", "country": "E", "type_name": "UK Parliament
+        constituency", "generation_low": 13, "country_name": "England", "type": "WMC"},
+        "15881": {"parent_area": 2243, "generation_high": 20, "all_names": {}, "id":
+        15881, "codes": {"unit_id": "10112"}, "name": "Coleshill", "country": "E",
+        "type_name": "County council electoral division", "generation_low": 3, "country_name":
+        "England", "type": "CED"}, "97162": {"parent_area": null, "generation_high":
+        20, "all_names": {}, "id": 97162, "codes": {"ons": "E01031021"}, "name": "North
+        Warwickshire 006C", "country": "E", "type_name": "Lower Layer Super Output
+        Area (Full)", "generation_low": 13, "country_name": "England", "type": "OLF"},
+        "131540": {"parent_area": null, "generation_high": 20, "all_names": {}, "id":
+        131540, "codes": {"ons": "E01031021"}, "name": "North Warwickshire 006C",
+        "country": "E", "type_name": "Lower Layer Super Output Area (Generalised)",
+        "generation_low": 13, "country_name": "England", "type": "OLG"}, "7606": {"parent_area":
+        2458, "generation_high": 20, "all_names": {}, "id": 7606, "codes": {"ons":
+        "44UBGC", "gss": "E05007463", "unit_id": "10113"}, "name": "Coleshill South",
+        "country": "E", "type_name": "District council ward", "generation_low": 1,
+        "country_name": "England", "type": "DIW"}, "55160": {"parent_area": 2458,
+        "generation_high": 20, "all_names": {}, "id": 55160, "codes": {"ons": "44UB010",
+        "gss": "E04009636", "unit_id": "10183"}, "name": "Coleshill", "country": "E",
+        "type_name": "Civil parish/community", "generation_low": 12, "country_name":
+        "England", "type": "CPC"}, "47546": {"parent_area": null, "generation_high":
+        20, "all_names": {}, "id": 47546, "codes": {"ons": "E02006473"}, "name": "North
+        Warwickshire 006", "country": "E", "type_name": "Middle Layer Super Output
+        Area (Generalised)", "generation_low": 13, "country_name": "England", "type":
+        "OMG"}, "2458": {"parent_area": null, "generation_high": 20, "all_names":
+        {}, "id": 2458, "codes": {"ons": "44UB", "gss": "E07000218", "unit_id": "10124"},
+        "name": "North Warwickshire Borough Council", "country": "E", "type_name":
+        "District council", "generation_low": 1, "country_name": "England", "type":
+        "DIS"}}'
+    http_version: '1.1'
+  recorded_at: Tue, 17 Sep 2013 14:44:15 GMT
+recorded_with: VCR 2.4.0
