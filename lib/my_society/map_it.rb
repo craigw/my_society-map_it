@@ -119,6 +119,14 @@ module MySociety
       def id
         attributes['id']
       end
+      
+      def snac
+        attributes['codes']['ons'] rescue nil
+      end
+      
+      def gss
+        attributes['codes']['gss'] rescue nil
+      end
 
       def uri
         [ MySociety::MapIt.base_url, 'area', id ].join '/'
