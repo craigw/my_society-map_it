@@ -187,6 +187,15 @@ module MySociety
       def to_point
         h = to_hash.dup
         Point.new h['wgs84_lon'], h['wgs84_lat'], Point::SYSTEM_WGS84
+      
+      def easting_northing
+        h = to_hash.dup
+        if h['coordsyst'] == "G"
+          coordsyst = Point::SYSTEM_BRITISH_NATIONAL_GRID
+        else h['coordsyst'] == "I"
+          coordsyst = Point::SYSTEM_IRISH_NATIONAL_GRID
+        end
+        Point.new h['northing'], h['easting'], coordsyst
       end
     end
   end
