@@ -157,7 +157,7 @@ module MySociety
       end
 
       def uri
-        "#{MySociety::MapIt.base_url}/point/#{coordinate_system}/#{x},#{y}"
+        "#{MySociety::MapIt.base_url}/point/#{coordinate_system}/#{y},#{x}"
       end
 
       def to_point
@@ -186,7 +186,8 @@ module MySociety
 
       def to_point
         h = to_hash.dup
-        Point.new h['wgs84_lon'], h['wgs84_lat'], Point::SYSTEM_WGS84
+        Point.new h['wgs84_lat'], h['wgs84_lon'], Point::SYSTEM_WGS84
+      end
       
       def easting_northing
         h = to_hash.dup
