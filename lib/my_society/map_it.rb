@@ -42,30 +42,12 @@ module MySociety
         DIW LBW LGW MTW UTW
       )
       
-      def district
-        detect(DISTRICT_TYPE_CODES)
-      end
-      
-      def parish
-        detect(PARISH_TYPE_CODES)
-      end
-      
-      def county
-        return if district.nil?
-        detect(COUNTY_TYPE_CODES)
-      end
-      
-      def county_ward
-        return if county.nil?
-        detect(COUNTY_WARD_TYPE_CODES)
-      end
-      
-      def unitary
-        detect(UNITARY_TYPE_CODES)
-      end
-      
-      def ward
-        detect(WARD_TYPE_CODES)
+      def method_missing(method_name, *args, &blk)
+        codes = "#{method_name.upcase}_TYPE_CODES"
+        const = LocalAuthorityFinder.const_get(codes)
+        detect(const)
+        rescue NameError
+          super
       end
 
       def local_authority
